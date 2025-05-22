@@ -1,5 +1,5 @@
 {% set name = "hierarchicalsoftmax" %}
-{% set version = "1.0.2" %}
+{% set version = "1.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hierarchicalsoftmax-{{ version }}.tar.gz
-  sha256: a894dffdc7ec366d6c4846badcb3e21bf9b09b9eed247f4f116b310231195135
+  sha256: 35fc70f9db05cfaa0feb7fdfab45e2e9db8894d8bf5dbcf0c8e980f6e5e25605
 
 build:
   noarch: python
