@@ -32,6 +32,7 @@ requirements:
     - python-graphviz >=0.20.3
     - plotly >=5.0.0
     - attrs
+    - typer
 
 test:
   imports:
