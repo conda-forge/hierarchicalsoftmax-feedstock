@@ -31,6 +31,7 @@ requirements:
     - torchmetrics >=1.4.0.post0
     - python-graphviz >=0.20.3
     - plotly >=5.0.0
+    - attrs
 
 test:
   imports:
