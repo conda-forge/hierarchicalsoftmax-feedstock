@@ -1,5 +1,6 @@
+{% set python_min = "3.10" %}
 {% set name = "hierarchicalsoftmax" %}
-{% set version = "1.0.2" %}
+{% set version = "1.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +8,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hierarchicalsoftmax-{{ version }}.tar.gz
-  sha256: a894dffdc7ec366d6c4846badcb3e21bf9b09b9eed247f4f116b310231195135
+  sha256: f8d947b0d985200371fdafa6e90b5d7c02cdb8add4104189c9b8da749903cea8
 
 build:
+  entry_points:
+    - treedict = hierarchicalsoftmax.treedict:app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -17,20 +20,26 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - poetry-core
+    - poetry-core >=1.0.0
     - pip
   run:
     - python >={{ python_min }},<4.0
-    - anytree >=2.8.0,<3.0.0
+    - anytree >=2.8.0
     - pytorch >=1.10.2
     - rich >=10.16.1
-    - scikit-learn >=1.1.1,<2.0.0
+    - scikit-learn >=1.1.1
+    - torchmetrics >=1.4.0.post0
+    - python-graphviz >=0.20.3
+    - plotly >=5.0.0
+    - attrs
+    - typer
 
 test:
   imports:
     - hierarchicalsoftmax
   commands:
     - pip check
+    - treedict --help
   requires:
     - python {{ python_min }}
     - pip
