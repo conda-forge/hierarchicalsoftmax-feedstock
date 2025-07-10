@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "hierarchicalsoftmax" %}
-{% set version = "1.4.3" %}
+{% set version = "1.4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hierarchicalsoftmax-{{ version }}.tar.gz
-  sha256: f8d947b0d985200371fdafa6e90b5d7c02cdb8add4104189c9b8da749903cea8
+  sha256: 0f072d83193311b48ad36492c0e070a6e9d6729ef3e85e2a5e67a434ae1f0486
 
 build:
   entry_points:
@@ -31,8 +31,8 @@ requirements:
     - torchmetrics >=1.4.0.post0
     - python-graphviz >=0.20.3
     - plotly >=5.0.0
-    - attrs
-    - typer
+    - attrs >=25.3.0
+    - typer >=0.15.4
 
 test:
   imports:
