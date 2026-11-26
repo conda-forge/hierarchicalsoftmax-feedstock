@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "hierarchicalsoftmax" %}
-{% set version = "1.4.4" %}
+{% set version = "1.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hierarchicalsoftmax-{{ version }}.tar.gz
-  sha256: 0f072d83193311b48ad36492c0e070a6e9d6729ef3e85e2a5e67a434ae1f0486
+  sha256: d089a87e4956da13383983c10c4460e0e53a07c7702e5ae6ed1f5e6d6544c881
 
 build:
   entry_points:
@@ -20,7 +20,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - poetry-core >=1.0.0
+    - hatchling
     - pip
   run:
     - python >={{ python_min }},<4.0
